@@ -1,7 +1,7 @@
 # Multi-stage build for React + Vite app
 # Stage 1: Build the application
 FROM node:20-alpine as build
-
+ARG VITE_API_URL
 # Set working directory
 WORKDIR /app
 
@@ -22,7 +22,7 @@ RUN npm run build
 
 # Stage 2: Serve the application
 FROM nginx:alpine
-
+ARG VITE_API_URL
 # Copy built files from build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
