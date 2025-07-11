@@ -21,16 +21,26 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the application
-FROM nginx:alpine
+FROM node:20-alpine
 ARG VITE_API_URL
+
+# Create a non-root user
+RUN adduser -D appuser
+
+# Set working directory
+WORKDIR /app
+
 # Copy built files from build stage
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist .
 
-# Copy nginx configuration (optional - nginx default config usually works for SPAs)
-# COPY nginx.conf /etc/nginx/nginx.conf
+# Install serve package globally
+RUN npm install -g serve
 
-# Expose port 80
-EXPOSE 80
+# Switch to non-root user
+USER appuser
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Expose port 3000 (serve's default port)
+EXPOSE 3000
+
+# Start serve
+CMD ["serve", "-s", "."]
