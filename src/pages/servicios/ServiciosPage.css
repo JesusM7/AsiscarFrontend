@@ -61,9 +61,9 @@
 }
 
 .tab.active {
-  color: #007bff;
-  border-bottom-color: #007bff;
-  background-color: #f8f9fa;
+  color: #ffffff;
+  border-bottom-color: #ff009d;
+  background-color: #cc222a;
 }
 
 .tab-icon {
@@ -95,17 +95,26 @@
     padding: 0 8px;
     overflow-x: auto;
     scrollbar-width: thin;
+    gap: 4px;
   }
   
   .tab {
-    padding: 12px 16px;
-    font-size: 0.8rem;
+    padding: 10px 12px;
+    font-size: 0.75rem;
     white-space: nowrap;
     min-width: fit-content;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
   }
   
   .tab-name {
-    display: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  
+  .tab-icon {
+    font-size: 1.1rem;
   }
   
   .servicios-content {
@@ -120,16 +129,28 @@
 @media (max-width: 480px) {
   .tabs {
     justify-content: space-around;
+    gap: 2px;
+    padding: 0 4px;
   }
   
   .tab {
     flex: 1;
     text-align: center;
-    padding: 12px 8px;
+    padding: 8px 4px;
+    font-size: 0.65rem;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
   }
   
   .tab-icon {
-    font-size: 1.3rem;
+    font-size: 1rem;
+  }
+  
+  .tab-name {
+    font-size: 0.6rem;
+    font-weight: 600;
+    line-height: 1.1;
   }
 
   .servicios-navigation {

@@ -159,14 +159,14 @@ function HomeCliente() {
               <span className="info-icon">🚨</span>
               <h3>Servicios de Emergencia</h3>
             </div>
-            <p>Para emergencias críticas, nuestros servicios están disponibles 24/7. Utiliza la opción "Urgente" al crear tu solicitud.</p>
+            <p>Para emergencias críticas, nuestros servicios están disponibles 24/7.</p>
           </div>
           <div className="info-card">
             <div className="info-header">
               <span className="info-icon">📱</span>
               <h3>Geolocalización</h3>
             </div>
-            <p>Activa tu ubicación para encontrar los servicios más cercanos y obtener tiempos de respuesta más rápidos.</p>
+            <p>Activa tu ubicación para encontrar los servicios más cercanos.</p>
           </div>
           <div className="info-card">
             <div className="info-header">

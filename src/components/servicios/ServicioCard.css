@@ -196,7 +196,7 @@
 
 .btn-secondary {
   background-color: #6c757d;
-  color: white;
+  color: rgb(27, 26, 26);
 }
 
 .btn-secondary:hover:not(:disabled) {

@@ -276,6 +276,7 @@
   .formulario-servicio {
     margin: 10px;
     border-radius: 8px;
+    margin-bottom: 80px; /* Add extra margin for mobile navbar */
   }
 
   .formulario-header {
@@ -288,6 +289,7 @@
 
   .formulario-servicio form {
     padding: 20px;
+    padding-bottom: 30px; /* Extra padding at bottom */
   }
 
   .form-grid {
@@ -301,9 +303,56 @@
 
   .form-actions {
     flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    margin-top: 15px;
+    border-top: 2px solid #e9ecef;
+    position: relative;
+    z-index: 1;
   }
 
   .form-actions .btn {
     width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-servicio {
+    margin: 5px;
+    margin-bottom: 100px; /* Even more margin for very small screens */
+  }
+
+  .formulario-servicio form {
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+
+  .formulario-header {
+    padding: 15px;
+  }
+
+  .formulario-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-actions {
+    padding-top: 20px;
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .form-actions .btn {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    min-height: 42px;
+    font-weight: 500;
+  }
+
+  .form-grid {
+    gap: 12px;
   }
 } 

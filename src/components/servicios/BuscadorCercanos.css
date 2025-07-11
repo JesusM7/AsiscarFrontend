@@ -1,40 +1,37 @@
 .buscador-cercanos-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 16px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
   color: #2c3e50;
-  margin-bottom: 10px;
-  font-size: 2.5rem;
+  margin-bottom: 8px;
+  font-size: 2.1rem;
 }
 
 .ubicacion-actual {
   color: #6c757d;
-  font-size: 1rem;
-  margin-top: 10px;
-  font-family: monospace;
-  background-color: #f8f9fa;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  word-break: break-all;
 }
 
 .filtros-cercanos {
   background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin-bottom: 30px;
-  border: 1px solid #e9ecef;
+  padding: 16px;
+  margin-bottom: 20px;
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: end;
   flex-wrap: wrap;
 }
@@ -42,75 +39,83 @@
 .filtro-grupo {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
+  min-width: 120px;
+  flex: 1;
 }
 
 .filtro-grupo label {
   color: #495057;
   font-weight: 500;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
 }
 
-.filtro-grupo select {
-  padding: 10px 12px;
+.filtro-grupo select,
+.filtro-grupo input {
+  padding: 8px 10px;
   border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
   background-color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.filtro-grupo select:focus {
+.filtro-grupo select:focus,
+.filtro-grupo input:focus {
   outline: none;
   border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
 }
 
-.filtros-cercanos .btn {
-  padding: 10px 20px;
+.filtro-grupo input::placeholder {
+  color: #adb5bd;
+}
+
+.btn {
+  padding: 8px 16px;
   border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
   background-color: #007bff;
-  color: white;
-  height: fit-content;
+  color: rgb(27, 26, 26);
   white-space: nowrap;
 }
 
-.filtros-cercanos .btn:hover:not(:disabled) {
+.btn:hover {
   background-color: #0056b3;
   transform: translateY(-1px);
 }
 
-.filtros-cercanos .btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.resultados-stats {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #e3f2fd;
+.filtros-estadisticas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #f8f9fa;
   border-radius: 8px;
-  text-align: center;
-  border-left: 4px solid #2196f3;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.resultados-stats p {
+.filtros-estadisticas p {
   margin: 0;
-  color: #1565c0;
+  color: #495057;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .servicios-cercanos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 20px;
+  width: 100%;
 }
 
 .servicio-con-distancia {
@@ -207,22 +212,25 @@
 
 @media (max-width: 768px) {
   .buscador-cercanos-container {
-    padding: 10px;
+    padding: 8px;
+    max-width: 100vw;
   }
   
   .filtros-cercanos {
     flex-direction: column;
     align-items: stretch;
-    gap: 15px;
+    gap: 12px;
+    padding: 12px;
   }
   
   .filtro-grupo {
     min-width: auto;
+    flex: none;
   }
   
   .filtros-cercanos .btn {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   
   .servicios-cercanos-grid {
@@ -231,10 +239,84 @@
   }
   
   .header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .ubicacion-actual {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+  
+  .filtros-estadisticas {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+  
+  .no-servicios {
+    padding: 40px 16px;
+  }
+  
+  .loading {
+    padding: 40px 16px;
+  }
+  
+  .error {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buscador-cercanos-container {
+    padding: 6px;
+  }
+  
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .filtros-cercanos {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .filtro-grupo label {
+    font-size: 0.8rem;
+  }
+  
+  .filtro-grupo select,
+  .filtro-grupo input {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .ubicacion-actual {
+    font-size: 0.75rem;
+  }
+  
+  .filtros-estadisticas p {
+    font-size: 0.8rem;
+  }
+  
+  .distancia-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  
+  .no-servicios {
+    padding: 32px 12px;
+  }
+  
+  .loading {
+    padding: 32px 12px;
+  }
+  
+  .error {
+    padding: 24px 12px;
   }
 } 

@@ -559,7 +559,7 @@ const FormularioServicio = ({ servicioId = null, onGuardar, onCancelar }) => {
           </div>
 
           {/* Imagen */}
-          <div className="form-group full-width">
+          {/* <div className="form-group full-width">
             <label htmlFor="imagen">Imagen del Servicio</label>
             <input
               type="file"
@@ -573,7 +573,7 @@ const FormularioServicio = ({ servicioId = null, onGuardar, onCancelar }) => {
                 <img src={imagenPreview} alt="Preview" />
               </div>
             )}
-          </div>
+          </div> */}
         </div>
 
         {/* Botones de Acción */}

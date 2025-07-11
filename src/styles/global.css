@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,10 +18,8 @@ body {
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
-}
-
-/* Ajustar contenido principal para el navbar fijo */
-body {
+  width: 100%;
+  overflow-x: hidden;
   padding-top: 0; /* El navbar ya no es fixed, es sticky */
 }
 
@@ -35,6 +38,7 @@ body {
   justify-content: center;
   gap: 6px;
   font-family: inherit;
+  white-space: nowrap;
 }
 
 .btn:disabled {
@@ -122,6 +126,8 @@ body {
   margin: 0 auto;
   padding: 12px;
   min-height: calc(100vh - 64px); /* Altura menos navbar */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Estilos para formularios */
@@ -148,6 +154,7 @@ body {
   transition: border-color 0.2s, box-shadow 0.2s;
   background-color: white;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -183,18 +190,45 @@ body {
 /* Responsividad */
 @media (max-width: 768px) {
   .page-container {
-    padding: 10px;
-    min-height: calc(100vh - 56px); /* Altura menos navbar en móvil */
+    padding: 8px;
+    min-height: calc(100vh - 120px); /* Más espacio para navbar móvil */
+    max-width: 100vw;
   }
   
   .btn {
-    width: 100%;
-    padding: 8px 16px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 6px 8px;
   }
 }
 
 @media (max-width: 480px) {
   .page-container {
-    padding: 8px;
+    padding: 6px;
+    min-height: calc(100vh - 140px); /* Más espacio para navbar móvil */
+  }
+  
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  
+  .loading {
+    padding: 16px 8px;
   }
 }
