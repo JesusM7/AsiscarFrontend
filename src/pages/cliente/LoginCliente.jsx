@@ -124,6 +124,7 @@ function LoginCliente() {
       
       <div className="login-extra">
         <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+        <p>¿No recibiste el enlace? <a href="/verificacion/reenviar">Reenviarlo</a></p>
       </div>
     </div>
   );

@@ -14,7 +14,8 @@ const API_CONFIG = {
       REGISTER: '/api/register',
       LOGOUT: '/api/logout',
       REFRESH: '/api/refresh',
-      VERIFY: '/api/verify'
+      VERIFY: '/api/verify',
+      RESEND_VERIFICATION: '/api/resend-verification'
     },
     
     // User endpoints

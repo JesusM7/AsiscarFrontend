@@ -11,10 +11,13 @@ import HomeCliente from './pages/HomeCliente';
 import SolicitarServicio from './pages/cliente/SolicitarServicio';
 import LoginCliente from './pages/cliente/LoginCliente';
 import RegisterCliente from './pages/cliente/RegisterCliente';
+import RegistroExitoso from './pages/cliente/RegistroExitoso';
+import ReenviarVerificacion from './pages/cliente/ReenviarVerificacion';
 import LandingPage from './pages/LandingPage';
 import ServiciosPage from './pages/servicios/ServiciosPage';
 import EditarServicio from './pages/servicios/EditarServicio';
 import PanelAdministracion from './pages/admin/PanelAdministracion';
+
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginCliente />} />
           <Route path="/register" element={<RegisterCliente />} />
+          <Route path="/registro-exitoso" element={<RegistroExitoso />} />
+          <Route path="/verificacion/reenviar" element={<ReenviarVerificacion />} />
+          
           
           {/* Rutas protegidas */}
           <Route 

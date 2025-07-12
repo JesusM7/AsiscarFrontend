@@ -86,7 +86,7 @@ function RegisterCliente() {
 
     try {
       const res = await API.post(ENDPOINTS.AUTH.REGISTER, formData);
-      navigate('/login');
+      navigate('/registro-exitoso');
     } catch (error) {
       console.error('Error:', error);
       const errorMessage = error.response?.data?.message || 'Error en el registro';
