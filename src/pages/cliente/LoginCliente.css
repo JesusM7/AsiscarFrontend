@@ -1,4 +1,4 @@
-.login-cliente {
+.login-cliente, .verificacion-reenvio, .registro-exitoso {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-.login-cliente h2 {
+h2 {
   color: #D32F2F;
   font-size: 1.7rem;
   margin-bottom: 1.3rem;
@@ -95,4 +95,12 @@ button:disabled {
 
 .login-extra a:hover {
   text-decoration: underline;
+}
+
+.registro-exitoso p {
+  text-align: center;
+}
+
+.registro-exitoso h2 {
+  text-align: center;
 }

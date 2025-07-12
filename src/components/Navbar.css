@@ -281,7 +281,7 @@
     width: 100%;
     max-width: 250px;
     background-color: #dc3545 !important;
-    color: white !important;
+    color: rgb(255, 0, 0) !important;
     border: 2px solid #c82333;
     border-radius: 8px;
   }

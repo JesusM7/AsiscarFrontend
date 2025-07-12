@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RegistroExitoso.css';
+import './LoginCliente.css';
 
 function RegistroExitoso() {
   const [segundos, setSegundos] = useState(5);

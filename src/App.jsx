@@ -17,6 +17,7 @@ import LandingPage from './pages/LandingPage';
 import ServiciosPage from './pages/servicios/ServiciosPage';
 import EditarServicio from './pages/servicios/EditarServicio';
 import PanelAdministracion from './pages/admin/PanelAdministracion';
+import CuentaVerificada from './pages/cliente/CuentaVerificada';
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
           <Route path="/register" element={<RegisterCliente />} />
           <Route path="/registro-exitoso" element={<RegistroExitoso />} />
           <Route path="/verificacion/reenviar" element={<ReenviarVerificacion />} />
+          <Route path="/cuenta-verificada" element={<CuentaVerificada />} />
+          
           
           
           {/* Rutas protegidas */}
