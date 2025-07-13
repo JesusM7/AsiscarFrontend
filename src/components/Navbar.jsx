@@ -89,15 +89,6 @@ const Navbar = () => {
                   >
                     🛠️ Servicios
                   </Link>
-                  {user?.userType === 'cliente' && (
-                    <Link 
-                      to="/cliente/solicitar" 
-                      className={`navbar-link ${isCurrentPath('/cliente/solicitar') ? 'active' : ''}`}
-                      onClick={closeMobileMenu}
-                    >
-                      📝 Solicitar
-                    </Link>
-                  )}
                   {user?.userType === 'admin' && (
                     <Link 
                       to="/admin" 
