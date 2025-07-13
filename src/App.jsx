@@ -3,6 +3,8 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedComponent from './components/ProtectedComponent';
 import Navbar from './components/Navbar';
 import JWTDebugInfo from './components/JWTDebugInfo';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
+import PWAStatus from './components/PWAStatus';
 
 import CrearSolicitud from './pages/CrearSolicitud';
 import RegistrarProveedor from './pages/RegistrarProveedor';
@@ -25,6 +27,8 @@ function App() {
     <AuthProvider>
       <Router>
         <Navbar />
+        <PWAStatus />
+        <PWAInstallPrompt />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginCliente />} />

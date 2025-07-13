@@ -1,0 +1,138 @@
+.pwa-status {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+  max-width: 90vw;
+  min-width: 300px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.pwa-status-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pwa-status-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pwa-status-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.pwa-status-button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pwa-status-button.update {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+.pwa-status-button.update:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.pwa-status-button.dismiss {
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.pwa-status-button.dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Offline status */
+.pwa-status.offline {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Update available status */
+.pwa-status.update-available {
+  background: #10b981;
+  color: white;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .pwa-status {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .pwa-status-content {
+    font-size: 13px;
+  }
+  
+  .pwa-status-button {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  .pwa-status-button.dismiss {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pwa-status {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+} 

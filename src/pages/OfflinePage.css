@@ -1,0 +1,190 @@
+.offline-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.offline-content {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.offline-icon {
+  margin-bottom: 24px;
+  color: #6b7280;
+  display: flex;
+  justify-content: center;
+}
+
+.offline-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.offline-content p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.offline-actions {
+  margin-bottom: 40px;
+}
+
+.retry-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.retry-button:active {
+  transform: translateY(0);
+}
+
+.offline-info {
+  text-align: left;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.offline-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.offline-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.offline-info li {
+  padding: 8px 0;
+  color: #4b5563;
+  position: relative;
+  padding-left: 24px;
+}
+
+.offline-info li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.offline-note {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+  padding: 16px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .offline-page {
+    padding: 16px;
+  }
+  
+  .offline-content {
+    padding: 24px;
+  }
+  
+  .offline-content h1 {
+    font-size: 24px;
+  }
+  
+  .offline-content p {
+    font-size: 14px;
+  }
+  
+  .offline-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .retry-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .offline-info {
+    padding: 20px;
+  }
+  
+  .offline-info h3 {
+    font-size: 16px;
+  }
+  
+  .offline-info li {
+    font-size: 14px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .offline-content {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .offline-content h1 {
+    color: #f9fafb;
+  }
+  
+  .offline-content p {
+    color: #d1d5db;
+  }
+  
+  .offline-info {
+    background: #374151;
+  }
+  
+  .offline-info h3 {
+    color: #f9fafb;
+  }
+  
+  .offline-info li {
+    color: #d1d5db;
+  }
+  
+  .offline-note {
+    background: #4b5563;
+    color: #d1d5db;
+  }
+} 
